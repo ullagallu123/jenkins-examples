@@ -58,6 +58,9 @@ pipeline {
                 //     message "Should we Continue"
                 //     ok "Yes, we should."
                 // }
+                script {
+                    input message: "Should we Continue?", ok: "Yes, we should."
+                }
                 echo "apply completed..."
             }
         }
@@ -70,6 +73,9 @@ pipeline {
                 //     message "Should we Continue"
                 //     ok "Yes, we should."
                 // }
+                script {
+                    input message: "Should we Continue?", ok: "Yes, we should."
+                }
                 echo "destroy completed..."
             }
         }
