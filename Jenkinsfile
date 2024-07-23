@@ -54,10 +54,10 @@ pipeline {
                 expression { params.action == 'apply' }
             }
             steps {
-                input {
-                    message "Should we Continue"
-                    ok "Yes, we should."
-                }
+                // input {
+                //     message "Should we Continue"
+                //     ok "Yes, we should."
+                // }
                 echo "apply completed..."
             }
         }
@@ -66,10 +66,10 @@ pipeline {
                 expression { params.action == 'destroy' }
             }
             steps {
-                input {
-                    message "Should we Continue"
-                    ok "Yes, we should."
-                }
+                // input {
+                //     message "Should we Continue"
+                //     ok "Yes, we should."
+                // }
                 echo "destroy completed..."
             }
         }
