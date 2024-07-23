@@ -19,7 +19,9 @@ pipeline{
 
 		stage("terraform init"){
 			when {
-				action == 'apply'
+				expression{ 
+					params.action == 'apply'
+				}
 			}
 			steps{
 				echo "initilization completed..."
@@ -27,7 +29,9 @@ pipeline{
 		}
 		stage("terraform fmt"){
 			when {
-				action == 'apply'
+				expression{ 
+					params.action == 'apply'
+				}
 			}
 			steps{
 				echo "fmt completed..."
@@ -35,7 +39,9 @@ pipeline{
 		}
 		stage("terraform validation"){
 			when {
-				action == 'apply'
+				expression{ 
+					params.action == 'apply'
+				}
 			}
 			steps{
 				echo "validation completed..."
@@ -43,7 +49,9 @@ pipeline{
 		}
 		stage("terraform plan"){
 			when {
-				action == 'apply'
+				expression{ 
+					params.action == 'apply'
+				}
 			}
 			steps{
 				echo "plan completed..."
@@ -51,25 +59,31 @@ pipeline{
 		}
 		stage("terraform apply"){
 			when {
-				action == 'apply'
+				expression{ 
+					params.action == 'apply'
+				}
 			}
-			input{
-			    message "Should we Continue"
-			    ok "Yes, we should."
-  			}
+			
 			steps{
+				input{
+				    message "Should we Continue"
+				    ok "Yes, we should."
+  			}
 				echo "apply completed..."
 			}
 		}
 		stage("terraform destroy"){
 			when {
-				action == 'destroy'
+				expression{ 
+					params.action == 'destroy'
+				}
 			}
-			input{
-			    message "Should we Continue"
-			    ok "Yes, we should."
-  			}
+			
 			steps{
+				input{
+				    message "Should we Continue"
+				    ok "Yes, we should."
+  				}
 				echo "apply completed..."
 			}
 		}
